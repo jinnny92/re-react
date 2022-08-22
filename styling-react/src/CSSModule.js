@@ -1,4 +1,4 @@
-import styles from "./CSSModule.module.scss";
+import styles from './CSSModule.module.css';
 
 const CSSModule = () => {
   return (
@@ -7,5 +7,6 @@ const CSSModule = () => {
     </div>
   );
 };
+
 
 export default CSSModule;
