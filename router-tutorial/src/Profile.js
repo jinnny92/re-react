@@ -1,5 +1,6 @@
 import React from "react";
 import { useParams } from "react-router-dom";
+import WithRouterSample from "./WithRouterSample";
 
 const data = {
   yoojin: {
@@ -43,6 +44,7 @@ const Profile = () => {
       ) : (
         <p>존재하지 않는 프로필입니다</p>
       )}
+      <WithRouterSample />
     </div>
   );
 };

@@ -4,6 +4,7 @@ import About from "./About";
 import Home from "./Home";
 import Profile from "./Profile";
 import Profiles from "./Profiles";
+import HistorySample from "./HistorySample";
 
 const App = () => {
   return (
@@ -24,6 +25,9 @@ const App = () => {
         <li>
           <Link to="/profiles">프로필</Link>
         </li>
+        <li>
+          <Link to="/history">history예제</Link>
+        </li>
       </ul>
       <hr />
 
@@ -34,6 +38,7 @@ const App = () => {
         {/* <Route path={['/about', '/info']} element={<About />} /> */}
         <Route path="/profile/:username" element={<Profile />} />
         <Route path="/profiles/*" element={<Profiles />} />
+        <Route path="/history" element={<HistorySample />} />
       </Routes>
     </div>
   );
