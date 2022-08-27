@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Routes, Link } from "react-router-dom";
+import { Route, Routes, Link, Switch, pathname  } from "react-router-dom";
 import About from "./About";
 import Home from "./Home";
 import Profile from "./Profile";
@@ -39,6 +39,19 @@ const App = () => {
         <Route path="/profile/:username" element={<Profile />} />
         <Route path="/profiles/*" element={<Profiles />} />
         <Route path="/history" element={<HistorySample />} />
+        <Route path='/*' element={ <h1>이 페이지는 존재하지 않습니다. - {pathname}</h1> }/>
+       
+        <Route
+        {/* path를 따로 정의하지 않으면 모든 상황에 렌더링됨 */}
+        render={({ location }) => (
+            <div>
+              <h2>이 페이지는 존재하지 않습니다:</h2>
+              <p>{location.pathname}</p>
+            </div>
+          )}
+
+        />
+        
       </Routes>
     </div>
   );
