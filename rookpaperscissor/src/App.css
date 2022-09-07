@@ -15,3 +15,15 @@
   display: flex;
   justify-content: center;
 }
+
+.Win {
+  border: 5px solid green;
+}
+
+.Lose {
+  border: 5px solid red;
+}
+
+.Tie {
+  border: 5px solid black;
+}

@@ -25,15 +25,44 @@ const choice = {
 };
 function App() {
   const [userSelect, setUserSelect] = useState(null);
-
   const [computerSelect, setComputerSelect] = useState(null);
+  const [result, setResult] = useState(null);
+  // const [result2, setResult2] = useState(null);
 
   const play = (userChoice) => {
     setUserSelect(choice[userChoice]);
     //유저가 선택할때(버튼을 누를때), 컴퓨터가 랜덤한 값을 보여준다
     let computerChoice = randomChoice(); //컴퓨터가 랜덤하게 값을 선택한다는 함수를 만들어서 결과값을 Computerchoice라는 변수에 넣어준다
     setComputerSelect(computerChoice);
+    setResult(judgement(choice[userChoice], computerChoice));
+    //setResult2(judgement2(choice[userChoice], computerChoice));
   };
+
+  const judgement = (user, computer) => {
+    console.log("user:", user, "computer:", computer);
+    if (user.name === computer.name) {
+      return "Tie";
+    } else if (user.name === "Rook") {
+      return computer.name === "Scissors" ? "Win" : "Lose";
+    } else if (user.name === "Scissors") {
+      return computer.name === "Paper" ? "Win" : "Lose";
+    } else if (user.name === "Paper") {
+      return computer.name === "Rook" ? "Win" : "Lose";
+    }
+  };
+
+  // const judgement2 = (user, computer) => {
+  //   console.log("user:", user, "computer:", computer);
+  //   if (user.name === computer.name) {
+  //     return "Tie";
+  //   } else if (computer.name === "Rook") {
+  //     return user.name === "Scissors" ? "Win" : "Lose";
+  //   } else if (computer.name === "Scissors") {
+  //     return user.name === "Paper" ? "Win" : "Lose";
+  //   } else if (computer.name === "Paper") {
+  //     return user.name === "Rook" ? "Win" : "Lose";
+  //   }
+  // };
 
   const randomChoice = () => {
     let itemArray = Object.keys(choice); //객체에 있는 key값만 뽑아서 배열로 만들어주는 함수
@@ -48,8 +77,8 @@ function App() {
   return (
     <div>
       <div className="main">
-        <Box name="You" item={userSelect} />
-        <Box name="Computer" item={computerSelect} />
+        <Box name="You" item={userSelect} result={result} />
+        <Box name="Computer" item={computerSelect} result={result} />
       </div>
       <div className="main">
         <button onClick={() => play("scissors")}>가위</button>
