@@ -1,0 +1,32 @@
+.box {
+  text-align: center;
+  border: 1px solid black;
+  margin: 10px;
+  height: 700px;
+  width: 500px;
+}
+
+.item-img {
+  height: 500px;
+  width: 400px;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+}
+
+.tie {
+  border: 10px solid black;
+  color: black;
+}
+
+.win {
+  border: 10px solid red;
+  color: red;
+}
+
+.lose {
+  border: 10px solid blue;
+  color: blue;
+}
