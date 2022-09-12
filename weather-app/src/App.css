@@ -1,0 +1,22 @@
+body {
+  background: url(https://wallpapers.com/images/hd/orange-sky-in-perfect-weather-6vq4ixi29juk0ayh.jpg);
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+}
+
+.weather-box {
+  border: 3px solid beige;
+  background-color: snow;
+  border-radius: 30px;
+  padding: 56px;
+  margin: 10px;
+}
