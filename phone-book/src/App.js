@@ -13,10 +13,10 @@ import ContactList from "./component/ContactList";
 function App() {
   return (
     <div>
-      <h1 className="title">연락처</h1>
+      <h1 className="text-center m-3">연락처</h1>
       <Container>
         <Row>
-          <Col>
+          <Col className="border-column">
             <ContactForm />
           </Col>
           <Col>
